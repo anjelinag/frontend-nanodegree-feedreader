@@ -36,15 +36,22 @@ $(function() {
                 url = aFeed.url;
                 expect(url).toBeDefined();
                 expect(url.length).not.tobe(0);
-            })
-        })
+            });
+        });
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-    });
-
+    
+            it('Has all URL names defined', function(){
+                allFeeds.forEach(function(aFeed){
+                    urlName = aFeed.name;
+                    expect(urlName).toBeDefined();
+                    expect(urlName.length).not.toBe(0);
+                });
+            });
+        });
 
     /* TODO: Write a new test suite named "The menu" */
 
