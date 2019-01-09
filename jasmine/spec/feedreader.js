@@ -64,7 +64,15 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+        it('Menu toggles when clicked', function() {
+            //Very first click, shows menu
+            document.body.querySelector('.menu-icon-link').click();
+            expect(document.querySelector('.menu-hidden')).toBeNull();
 
+            //Second click hides menu
+            document.body.querySelector('.menu-icon-link').click();
+            expect(document.querySelector('.menu-hidden')).toBeDefined();
+        });
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
