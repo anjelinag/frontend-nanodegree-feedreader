@@ -96,7 +96,8 @@ $(function() {
          it('Completes work',function(done) {
             //check if feeds have been loaded by checking
             //there is at least one .entry class in .feed container
-            expect(document.body.getElementByClassName('entry').length).toBeGreaterThan(0);
+            expect(document.body.getElementsByClassName('entry').length).toBeGreaterThan(0);
+            done();
          });
     });
     /* TODO: Write a new test suite named "New Feed Selection" */
