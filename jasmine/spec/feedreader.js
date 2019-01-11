@@ -106,5 +106,25 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+    describe('New Feed Selection', function(){
+        
+        let oldContent, newContent;
+
+        beforeEach(function(done){
+            loadFeed(0, function(){
+                oldContent = document.getElementsByClassName('feed')[0].innerText;
+                loadFeed(3, function(){
+                    newContent = document.getElementsByClassName('feed')[0].innerText;
+                    done();
+                });
+            });
+        });
+
+        it('Feed changes content', function(done){
+            expect(oldContent!= newContent).toBe(true);
+            done();
+        });
+
+    });
          
 }());
