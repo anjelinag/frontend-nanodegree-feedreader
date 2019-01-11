@@ -118,7 +118,7 @@ $(function() {
         });
 
         it('Feed changes content', function(done){
-            expect(oldContent!= newContent).toBe(true);
+            expect(oldContent).not.toEqual(newContent);
             done();
         });
 
